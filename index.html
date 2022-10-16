@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="description" content="Welcome"/>
+	<title>Ein Ganz Normaler Tag</title>
+	<style>
+	body {
+		margin: 0;
+		background: #000;
+		color: #FFF;
+		font: 100% sans-serif;
+		text-align: center;
+	}
+	video, canvas {
+		width: 50vw;
+		display: inline-block;
+	}
+	small {
+		display: block;
+	}
+	</style>
+</head>
+<body>
+	<h1>Videos</h1>
+	<h3>Deine Bandbreite: <span id="out_bw"></span> Mbps</h3>
+
+	<h2>EIN GANZ NORMALER TAG</h2>
+	<video controls loop src="https://drsnuggles.net/Video/EinGanzNormalerTag/H264_AAC_0.mp4"></video>
+
+	<script type="module">
+		import {videoSwitcher} from './videoSwitcher.js'
+	
+		// loop over all videos
+		for(let i = 0, vids = document.getElementsByTagName('video'); i < vids.length; i++) {
+			videoSwitcher.init(vids[i], out_bw) // add videoSwitcher (out_bw can be omitted)
+		}
+	
+	</script>
+
+</body>
+</html>
